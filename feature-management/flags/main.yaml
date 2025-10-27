@@ -1,0 +1,19 @@
+# feature-management/flags/main.yaml
+# This file is the Configuration as Code (CasC) definition for the application's feature flags.
+
+# This section tells CloudBees to create your Environments based on your Git branches.
+environments:
+  - name: Development
+    branch: development # The Git branch for Dev
+  - name: Staging
+    branch: staging # The Git branch for Staging
+  - name: Production
+    branch: main # The Git branch for Production
+
+# Define a simple feature flag we will use (The developer's part)
+flags:
+  # This is the "New Checkout Flow" feature
+  - name: new-checkout-flow
+    type: boolean
+    description: Enables the new single-page checkout flow for testing.
+    default: false # Default value is OFF
