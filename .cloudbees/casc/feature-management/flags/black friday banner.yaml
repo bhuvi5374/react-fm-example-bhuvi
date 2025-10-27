@@ -1,0 +1,15 @@
+---
+apiVersion: featuremanagement.cloudbees.io/v1alpha1
+kind: flag
+
+flag: black friday banner
+flagType: boolean
+description: Controls the visibility of the global Black Friday Sale promotion banner. MUST be turned off immediately after midnight on Saturday.
+labels:
+  - 'Category: Marketing'
+
+availableValues:
+  - "true"
+  - "false"
+
+isPermanent: false
