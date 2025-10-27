@@ -1,0 +1,14 @@
+---
+apiVersion: featuremanagement.cloudbees.io/v1alpha1
+kind: flag
+
+flag: next-gen-recs
+flagType: boolean
+description: Enables the new AI-driven recommendation engine. Only available to Gold/VIP loyalty tiers.
+labels:
+
+availableValues:
+  - "true"
+  - "false"
+
+isPermanent: false
