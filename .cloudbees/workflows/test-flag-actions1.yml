@@ -12,6 +12,6 @@ jobs:
         name: Enable demo-banner flag
         uses: cloudbees-io/feature-flag-actions/enable-flag@v1
         with:
-          app_id: "3145f0ab-3db3-4029-99ca-67dfec48050b"
+          app_id: "9902d6c2-ed48-4827-b792-06e009812ded"
           flag_id: "887fef83-701e-4477-ae4d-bc6ffc3701fe"
           env_id: "ee22090f-3994-4aa2-a22a-1949b9a5e53e"
