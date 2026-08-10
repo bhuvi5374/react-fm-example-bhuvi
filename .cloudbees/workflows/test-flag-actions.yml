@@ -10,8 +10,10 @@ jobs:
     steps:
       - id: enable-demo-banner
         name: Enable demo-banner flag
-        uses: cloudbees-io/feature-flag-actions/enable-flag@v1
+        uses: https://github.com/cloudbees-io/feature-flag-actions/enable-flag@main
         with:
           app_id: "1da2c18b-42b0-49b0-afe4-7f89903ba52a"
           flag_id: "fbcb13e2-8b74-4eba-b9af-712afc29f14d"
           env_id: "36d7212d-104d-42a7-85b1-a74a8fa617bf"
+          api_url: "https://api.cloudbees.io"
+          api_token: ${{ secrets.CLOUDBEES_API_TOKEN }}
