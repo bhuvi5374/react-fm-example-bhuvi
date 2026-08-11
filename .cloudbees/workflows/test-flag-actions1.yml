@@ -15,3 +15,45 @@ jobs:
           app_id: "9902d6c2-ed48-4827-b792-06e009812ded"
           flag_id: "887fef83-701e-4477-ae4d-bc6ffc3701fe"
           env_id: "ee22090f-3994-4aa2-a22a-1949b9a5e53e"
+
+      - id: disable-demo-banner
+        name: Disable demo-banner flag
+        uses: cloudbees-io/feature-flag-actions/disable-flag@v1
+        with:
+          app_id: "9902d6c2-ed48-4827-b792-06e009812ded"
+          flag_id: "887fef83-701e-4477-ae4d-bc6ffc3701fe"
+          env_id: "ee22090f-3994-4aa2-a22a-1949b9a5e53e"
+
+      - id: add-target-group-demo
+        name: Add target group to demo-tg-test
+        uses: cloudbees-io/feature-flag-actions/add-target-group@v1
+        with:
+          app_id: "9902d6c2-ed48-4827-b792-06e009812ded"
+          flag_id: "9d7f1364-3373-4257-a211-a3bad1e0dcee"
+          env_id: "ee22090f-3994-4aa2-a22a-1949b9a5e53e"
+          target_group_name: "bhuvi-flag-actions"
+          matches: true
+          flag_value: true
+
+      - id: set-rollout-schedule-demo
+        name: Set rollout schedule on demo-banner
+        uses: cloudbees-io/feature-flag-actions/set-rollout-schedule@v1
+        with:
+          app_id: "9902d6c2-ed48-4827-b792-06e009812ded"
+          flag_id: "887fef83-701e-4477-ae4d-bc6ffc3701fe"
+          env_id: "ee22090f-3994-4aa2-a22a-1949b9a5e53e"
+          schedule: |
+            [
+              {"from": "2026-08-11T18:00:00.000Z", "percentage": 20},
+              {"from": "2026-08-11T19:00:00.000Z", "percentage": 50},
+              {"from": "2026-08-11T20:00:00.000Z", "percentage": 100}
+            ]
+
+      - id: set-rollout-split-demo
+        name: Set rollout split on demo-banner
+        uses: cloudbees-io/feature-flag-actions/set-rollout-split@v1
+        with:
+          app_id: "9902d6c2-ed48-4827-b792-06e009812ded"
+          flag_id: "887fef83-701e-4477-ae4d-bc6ffc3701fe"
+          env_id: "ee22090f-3994-4aa2-a22a-1949b9a5e53e"
+          percent-true: 30
